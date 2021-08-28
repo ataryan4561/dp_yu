@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    vector<int> arr={1,2,3,4,7,6,2};
+    vectorint> val={3,1,1,2,2,1,1};
+    int sum=10;
+    vector<vector<int>> a(arr.size()+1,vector<int> (sum+1,0));
+    for(int i=1; i<a.size(); i++)
+    {
+        for(int j=1; j<a[i].size(); j++)
+        {
+            if(arr[i-1]<=j)
+            {
+                a[i][j]=max(val[i-1]+a[i][j-arr[i-1]],a[i-1][j])
+            }
+            else 
+                a[i][j]=a[i-1][j];
+        }
+    }
+    cout<<a[arr.size()][sum]<<" ";
+}
